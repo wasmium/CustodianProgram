@@ -1,0 +1,28 @@
+
+[package]
+name = "onchain_program"
+version = "0.2.0-alpha2"
+description = "Custodian Solana Program for Wasmium Network"
+authors = ["Wasmium Network Developers <hq@wasmium.network>"]
+repository = "https://github.com/wasmium/CustodianProgram"
+license = "MPL-2.0"
+homepage = "https://solana.com/"
+edition = "2018"
+
+[features]
+no-entrypoint = []
+
+[dependencies]
+borsh = "0.9.3"
+borsh-derive = "0.9.1"
+generic-array = "0.14.5"
+solana-program = "1.9"
+tai64 = "4.0.0"
+wallet-instructions = { git = "https://github.com/wasmium/WalletInstructions.git" }
+zeroed-store = { git = "https://github.com/wasmium/ZeroedStore.git", default-features = false, features = [
+    "non_constant_sizeof",
+] }
+
+[lib]
+name = "onchain_program"
+crate-type = ["cdylib", "lib"]
